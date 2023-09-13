@@ -1,0 +1,30 @@
+name: Build and Deploy to aliyun
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: false
+      - name: Setup Env
+        uses: actions/setup-node@v3.6.0
+        run: npm i -g yarn
+      - name: Install
+        run: yarn --frozen-lockfile
+      - name: Build
+        run: yarn build
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v4.0.5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.REMOTE_PRIMARY_KEY }}
+          ARGS: '-avzr --delete --exclude .env.local'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PORT: 22
+          SOURCE: .next/standalone/
+          TARGET: /usr/project_demo/next-app
