@@ -62,7 +62,7 @@ export const sessions = mysqlTable("session", {
 });
 
 export const verificationTokens = mysqlTable(
-  "verificationtoken",
+  "verificationToken",
   {
     identifier: varchar("identifier", { length: 255 }).notNull(),
     token: varchar("token", { length: 255 }).notNull(),

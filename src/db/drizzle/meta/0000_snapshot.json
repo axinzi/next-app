@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "5fdf2d64-9d6e-4a63-9d5d-eae8ede2590a",
+  "id": "e6338c2c-4ba4-4233-9b14-76e27f1834ad",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "post": {
@@ -291,8 +291,8 @@
       },
       "uniqueConstraints": {}
     },
-    "verificationtoken": {
-      "name": "verificationtoken",
+    "verificationToken": {
+      "name": "verificationToken",
       "columns": {
         "identifier": {
           "name": "identifier",
@@ -319,8 +319,8 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "verificationtoken_identifier_token": {
-          "name": "verificationtoken_identifier_token",
+        "verificationToken_identifier_token": {
+          "name": "verificationToken_identifier_token",
           "columns": [
             "identifier",
             "token"
