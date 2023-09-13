@@ -32,3 +32,6 @@ jobs:
           REMOTE_PORT: 22
           SOURCE: .next/standalone/ public
           TARGET: /usr/project_demo/next-app
+          SCRIPT_AFTER: |
+            cd /usr/project_demo
+            docker-compose restart next-app
