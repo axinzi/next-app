@@ -22,7 +22,7 @@ const UnsignedIn: FC = () => {
       <Flex direction={"column"} justify="center" gap={"2"}>
         <form
           onSubmit={handleSubmit(async (data) => {
-            await signIn("email", { ...data, redirect: false });
+            await signIn("email", { ...data });
             emailCheckAlertRef.current?.click();
           })}
         >
@@ -40,7 +40,6 @@ const UnsignedIn: FC = () => {
             onClick={() =>
               signIn("credentials", {
                 email: "222@222.com",
-                redirect: false,
               })
             }
           >
@@ -50,7 +49,6 @@ const UnsignedIn: FC = () => {
             onClick={() =>
               signIn("credentials", {
                 email: "333@333.com",
-                redirect: false,
               })
             }
           >

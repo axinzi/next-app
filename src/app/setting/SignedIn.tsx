@@ -59,7 +59,7 @@ const SignedIn: FC<IProps> = ({ session, updateUserName }) => {
             </Box>
           </Flex>
         </Card>
-        <Button onClick={() => signOut({ redirect: false })}>登出</Button>
+        <Button onClick={() => signOut()}>登出</Button>
       </Flex>
 
       <AlertDialog.Root>
