@@ -13,9 +13,9 @@ jobs:
           submodules: false
       - name: Setup Env
         uses: actions/setup-node@v3.6.0
-      - name: 'Create env file'
+      - name: "Create env file"
         run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
+          echo "${{ secrets.ENV_FILE }}" > .env.local
       - name: Install
         run: yarn --frozen-lockfile
       - name: Build
