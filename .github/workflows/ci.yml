@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Copy Data
-        run: cp .next/static .next/standalone/.next/static
+        run: cp -r .next/static .next/standalone/.next/static
       - name: Deploy
         uses: easingthemes/ssh-deploy@v4.0.5
         with:
