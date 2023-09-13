@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# 说明
 
-First, run the development server:
+## 技术栈
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- next.js
+- drizzleORM
+- mysql2
+- nextAuth
+- radixUI
+- ...
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 应用说明
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 用户模块: 增改, 路由权限
+- 文章模块: 增删查改
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+静态页面使用ssg生成 如: /main/post/[id]
 
-## Learn More
+动态页面使用ssr+csr渲染
 
-To learn more about Next.js, take a look at the following resources:
+大部分api操作使用 server action 在服务端完成
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 路由架构
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- /main: 主页
+  - /main/post: 文章展示
+  - /main/post/[id]: 文章详情
+- /user: 我的
+  - /user/post: 文章管理
+  - /user/post/new: 新增文章
+  - /user/post/[id]: 修改文章
+- /admain: 后台(管理员主页)
+- /setting: 设置
 
-## Deploy on Vercel
+## 权限架构
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- /main  /setting: 所有可见可用
+- /user: 所有可见 用户可用
+- /admin: 管理员可见可用
