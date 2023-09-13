@@ -16,7 +16,6 @@ jobs:
         uses: easingthemes/ssh-deploy@v4.0.5
         with:
           SSH_PRIVATE_KEY: ${{ secrets.REMOTE_PRIMARY_KEY }}
-          ARGS: "-avzr --delete --exclude .env.local"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_PORT: 22
