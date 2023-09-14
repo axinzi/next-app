@@ -33,6 +33,11 @@ dayjs.updateLocale("zh-cn", {
     sameElse: "YYYY-MM-DD",
   },
 });
+export const metadata = {
+  icons: {
+    icon: "/next.svg",
+  },
+};
 export default async function Layout({ children }: { children: ReactNode }) {
   const session = await getServerSession(authOptions);
   return (
